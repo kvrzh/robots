@@ -31,14 +31,14 @@ class robots
     {
         $handle = @fopen($this->url, "r");
         if ($handle) {
-            $count = 0;
+
             $result['isExists'] = true;
             $result['isHost'] = false;
             $result['countHost'] = 0;
             $result['isSitemap'] = false;
             while (($buffer = fgets($handle, 4096)) !== false) {
 
-                $count += strlen($buffer);
+
                 if (stripos($buffer, 'Host')) {
                     $result['isHost'] = true;
                     $result['countHost']++;
@@ -47,7 +47,7 @@ class robots
                     $result['isSitemap'] = true;
                 }
             }
-            echo "<h2>$count</h2>";
+
             fclose($handle);
 
             $result['size'] = $this->getSize();

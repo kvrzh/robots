@@ -21,8 +21,14 @@ if (isset($_POST['go']) && isset($_POST['url'])) {
     $result = $robot->getResult();
 }
 ?>
+<h1><?= $robot->getUrl() ?></h1>
 <table>
-
+    <tr>
+        <td>Название</td>
+        <td>ОК/Ошибка</td>
+        <td>Состояние</td>
+        <td>Рекомендации</td>
+    </tr>
     <tr>
         <td>Проверка наличия файла robots.txt</td>
         <td><?php if ($result['isExists'] === true) echo '<span class="success">Ок</span>'; else echo '<span class="error">Ошибка</span>' ?></td>
