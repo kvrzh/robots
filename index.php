@@ -19,9 +19,10 @@ include 'rules.php';
 if (isset($_POST['go']) && isset($_POST['url'])) {
     $robot = new robots($_POST['url']);
     $result = $robot->getResult();
+    $name = $robot->getUrl();
 }
 ?>
-<h1><?= $robot->getUrl() ?></h1>
+<h1><?= $name ?></h1>
 <table>
     <tr>
         <td>Название</td>
